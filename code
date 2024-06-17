@@ -3,15 +3,30 @@
 void breakfast_menu() {
 	int optbreakfast=0;
 	
+	int var[3];
+	int i=0;
 
-	//printf("choose what you want to eat today!\n");
-	//printf("1.egg\n2.bread\n3.fried hotdog\n4.exit\n");
-	//scanf_s("%d", &optbreakfast);
+	printf("choose what you want to eat today!\n");
+	printf("1.egg\n2.bread\n3.fried hotdog\n4.exit\n");
+	scanf_s("%d", &optbreakfast);
+	var[i]= optbreakfast;
+	i = i + 1;
 
 	while (optbreakfast != 4) {
-		printf("choose what you want to eat today!\n");
-		printf("1.egg\n2.bread\n3.fried hotdog\n4.exit\n");
-		scanf_s("%d", &optbreakfast);
+
+		if (optbreakfast == var[i]) {
+			printf("the food u oredi chose,please choose another one.\n");
+		}
+		else {
+			printf("choose what you want to eat today!\n");
+			printf("1.egg\n2.bread\n3.fried hotdog\n4.exit\n");
+			scanf_s("%d", &optbreakfast);
+
+			var[i] = optbreakfast;
+			i++;
+			
+		}
+		
 	}
 	
 }
@@ -93,4 +108,3 @@ int main() {
 	
 	return 0;
 }
-
