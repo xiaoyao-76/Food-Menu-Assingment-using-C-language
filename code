@@ -2,36 +2,149 @@
 
 void bf() {
 	int optbf = 0;
-	while (optdin != 7) {
-		printf("1.milo\n2.milk\n3.milk\n4.boiled egg\n5.fired egg\n.6hotdog\n\7.exit\n");
+	int totalcal = 0;
+
+	while (optbf != 6) {
+		printf("1.milo (100 cal)\n2.milk (100 cal)\n3.boiled egg (200 cal)\n4.fried egg (250 cal)\n5.hotdog (500 cal)\n6.exit\n");
+		printf("Your option: ");
 		scanf_s("%d", &optbf);
+
+		switch(optbf) {
+			case 1: {
+				printf("You chose milo with 100 calory.\n");
+				totalcal += 100;
+				break;
+			}
+			case 2: {
+				printf("You chose milk with 100 calory.\n");
+				totalcal += 100;
+				break;
+			}
+			case 3: {
+				printf("You chose boiled egg with 200 calory.\n");
+				totalcal += 200;
+				break;
+			}
+			case 4: {
+				printf("You chose fried egg with 250 calory.\n");
+				totalcal += 250;
+				break;
+			}
+			case 5: {
+				printf("You chose hotdog with 500 calory.\n");
+				totalcal += 500;
+				break;
+			}
+			case 6: {
+				printf("You exit the program.\n");
+				break;
+			}
+			default: {
+				printf("You enter an invalid option. Please try again.\n");
+				break;
+			}
+		}
 	}
+	printf("Total calory for your breakfast today: %d\n", totalcal);
+
 }
 
 void lunch() {
 	int optlun = 0;
+	int totalCal = 0;
+
 	while (optlun != 5) {
-		printf("1.kolo mee\n2.kampua mee\n3.mix vegetable\n4.curry chicken\n\5.exit\n");
+		printf("1.kolo mee (500 cal)\n2.kampua mee (500 cal)\n3.mix vegetable (400 cal)\n4.curry chicken (700 cal)\n\5.exit\n");
+		printf("Your option: ");
 		scanf_s("%d", &optlun);
+		switch (optlun) {
+			case 1: {
+				printf("You chose kolo mee with 500 calory.\n");
+				totalCal += 500;
+				break;
+			}
+			case 2: {
+				printf("You chose kampua mee with 500 calory.\n");
+				totalCal += 500;
+				break;
+			}
+			case 3: {
+				printf("You chose mix vegetable with 400 calory.\n");
+				totalCal += 400;
+				break;
+			}
+			case 4: {
+				printf("You chose curry chicken with 700 calory.\n");
+				totalCal += 700;
+				break;
+			}
+			case 5: {
+				printf("You exit the program.\n");
+				break;
+			}
+			default: {
+				printf("You enter an invalid option. Please try again.\n");
+				break;
+			}
+		}
 	}
+	printf("Total calory for your lunch today: %d\n", totalCal);
 }
 
 void dinner() {
 	int optdin = 0;
+	int totalcal = 0;
+	
 	while (optdin != 5) {
-		printf("1.steamed chicken\n2.fried chicken\n3.fried okra\n4.fried mani vegetable\5.exit");
+		printf("1.steamed chicken (700 cal)\n2.fried chicken (1.4 kcal)\n3.okra (400 cal)\n4.mani vegetable (400 cal)\n5.exit\n");
+		printf("Your option: ");
 		scanf_s("%d", &optdin);
+
+		switch (optdin) {
+			case 1: {
+				printf("You chose steamed chicken with 700 calory.\n");
+				totalcal += 700;
+				break;
+			}
+			case 2: {
+				printf("You chose fried chicken with 1400 calory.\n");
+				totalcal += 1400;
+				break;
+			}
+			case 3: {
+				printf("You chose okra with 400 calory.\n");
+				totalcal += 400;
+				break;
+			}
+			case 4: {
+				printf("You chose mani vegetable with 400 calory.\n");
+				totalcal += 400;
+				break;
+			}
+			case 5: {
+				printf("You exit the program.\n");
+				break;
+			}
+			default: {
+				printf("You enter an invalid option. Please try again.\n");
+				break;
+			}
+		}
 	}
+	printf("Total calory for your dinner today: %d\n", totalcal);
 }
 
 int main() {
 	int option=0;
+
 	while(option!=4){
 		printf("1.breakfast\n2.lunch\n3.dinner\n4.exit\n");
+		printf("Your option: ");
 		scanf_s("%d", &option);
+
 		switch (option) {
 			case 1:{
-				breakfast();
+				bf();
 				break;
 			}
 			case 2: {
@@ -46,8 +159,12 @@ int main() {
 				printf("exit\n");
 				break;
 			}
+			default:{
+				printf("You enter an invalid option. Please try again.\n");
+				break;
+			}
 		}
 	}
-	
-	return 0;
+	//return 0;
 }
+
