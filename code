@@ -1,110 +1,53 @@
 #include <stdio.h>
 
-void breakfast_menu() {
-	int optbreakfast=0;
-	
-	int var[3];
-	int i=0;
-
-	printf("choose what you want to eat today!\n");
-	printf("1.egg\n2.bread\n3.fried hotdog\n4.exit\n");
-	scanf_s("%d", &optbreakfast);
-	var[i]= optbreakfast;
-	i = i + 1;
-
-	while (optbreakfast != 4) {
-
-		if (optbreakfast == var[i]) {
-			printf("the food u oredi chose,please choose another one.\n");
-		}
-		else {
-			printf("choose what you want to eat today!\n");
-			printf("1.egg\n2.bread\n3.fried hotdog\n4.exit\n");
-			scanf_s("%d", &optbreakfast);
-
-			var[i] = optbreakfast;
-			i++;
-			
-		}
-		
-	}
-	
-}
-
-void lunch_menu() {
-	int optlunch=0;
-	
-
-	//printf("choose what you want to eat today!\n");
-	//printf("1.rice\n2.fried chicken\n3. steamed chicken\n4. spinach\n5.cauliflower with carrot\n6.exit\n");
-	//scanf_s("%d", &optlunch);
-	while (optlunch != 6) {
-		printf("choose what you want to eat today!\n");
-		printf("1.rice\n2.fried chicken\n3. steamed chicken\n4. spinach\n5.cauliflower with carrot\n6.exit\n");
-		scanf_s("%d", &optlunch);
-	}
-	
-}
-
-void dinner_menu() {
-	int optdinner=0;
-	
-
-	//printf("choose what you want to eat today!\n");
-	//printf("1.rice\n2.fried rice\n3.steamed fish\n4. crab\n5.prawn\n6.exit\n");
-	//scanf_s("%d", &optdinner);
-	while(optdinner!=6){
-		printf("choose what you want to eat today!\n");
-		printf("1.rice\n2.fried rice\n3.steamed fish\n4. crab\n5.prawn\n6.exit\n");
-		scanf_s("%d", &optdinner);
-	}
-
-	
-}
-
-void listdownmenu() {
-
-}
-
-void choice() {
-	int opt=0;
-
-	
-
-	while (opt != 4) {
-		printf("choose:\n1.breakfast\n2.lunch\n3.dinner\n4.exit\n");
-		scanf_s("%d", &opt);
-
-		switch (opt) {
-		case 1:
-			breakfast_menu();
-			break;
-		
-		case 2: {
-			lunch_menu();
-			break;
-		}
-		case 3: {
-			dinner_menu();
-			break;
-		}
-		default: {
-			printf("exit\n");
-			break;
-		}
-		}
+void bf() {
+	int optbf = 0;
+	while (optdin != 7) {
+		printf("1.milo\n2.milk\n3.milk\n4.boiled egg\n5.fired egg\n.6hotdog\n\7.exit\n");
+		scanf_s("%d", &optbf);
 	}
 }
 
+void lunch() {
+	int optlun = 0;
+	while (optlun != 5) {
+		printf("1.kolo mee\n2.kampua mee\n3.mix vegetable\n4.curry chicken\n\5.exit\n");
+		scanf_s("%d", &optlun);
+	}
+}
 
-
-
-
-
-
+void dinner() {
+	int optdin = 0;
+	while (optdin != 5) {
+		printf("1.steamed chicken\n2.fried chicken\n3.fried okra\n4.fried mani vegetable\5.exit");
+		scanf_s("%d", &optdin);
+	}
+}
 
 int main() {
-	choice();
+	int option=0;
+	while(option!=4){
+		printf("1.breakfast\n2.lunch\n3.dinner\n4.exit\n");
+		scanf_s("%d", &option);
+		switch (option) {
+			case 1:{
+				breakfast();
+				break;
+			}
+			case 2: {
+				lunch();
+				break;
+			}
+			case 3: {
+				dinner();
+				break;
+			}
+			case 4: {
+				printf("exit\n");
+				break;
+			}
+		}
+	}
 	
 	return 0;
 }
